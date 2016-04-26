@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.test.bemillionaire.QuizActivity"
+    android:background="@drawable/background_activity"    >
+
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1.5"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.8">
+
+
+            <ImageButton
+                android:id="@+id/btn_help_fifty_fifty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_5050"
+                android:background="@drawable/btn_tips_selector"
+                android:layout_alignParentTop="true"
+                android:onClick="onClick"/>
+            <ImageButton
+                android:id="@+id/btn_help_group"
+                android:src="@drawable/ic_action_social_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_tips_selector"
+                android:layout_below="@+id/btn_help_friend"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:id="@+id/btn_help_friend"
+                android:src="@drawable/ic_action_maps_local_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_tips_selector"
+                android:layout_below="@+id/btn_help_fifty_fifty"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.4"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btn_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выйти"
+                style="@style/btn_general"
+                android:background="@drawable/btn_choice_selector"
+                android:onClick="onClick"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+            <!-- android:src="@drawable/ic_action_exit"-->
+
+            <TextView
+                android:id="@+id/tv_info_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+
+                style="@style/text_dialog"/>
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="дальше"
+                android:background="@drawable/btn_dialog_selector"
+                android:onClick="onClick"
+
+                style="@style/btn_general"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="right|end|top"
+            android:layout_gravity="right"
+            android:foregroundGravity="right">
+            <!--<ImageButton-->
+                <!--android:id="@+id/btn_exitsds"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:src="@drawable/ic_action_notification_phone_in_talk"-->
+                <!--android:background="@drawable/btn_tips_selector"-->
+
+                <!--android:onClick="onClick"-->
+                <!--android:layout_gravity="top" />-->
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/rv_cash"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="right"-->
+               <!--/>-->
+            <ListView
+                android:id="@+id/lv_cash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:layout_gravity="right" />
+            <!--
+                android:focusable="false"-->
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@+id/layout_top"
+        android:layout_marginBottom="10dp">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:minHeight="70dp"
+                android:orientation="horizontal"
+                android:background="@drawable/btn_choice_selector"
+                android:gravity="center_vertical"
+                android:layout_span="2">
+                <TextView
+                    android:id="@+id/tv_question"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="Кто первым полетел на луну? "
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#fff"/>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp">
+            <LinearLayout
+                android:id="@+id/ll_a"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:minHeight="60dp"
+                android:orientation="horizontal"
+                android:background="@drawable/btn_choice_selector"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:onClick="onClick">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A: "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:paddingLeft="10dp"
+                    android:textColor="#fff"/>
+                <TextView
+                    android:id="@+id/tv_choice_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sdsdsdsdsds,"
+                    android:textSize="20sp"
+                    android:textColor="#fff" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_c"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:minHeight="60dp"
+                android:background="@drawable/btn_choice_selector"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:onClick="onClick">
+                <TextView
+
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C: "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#fff"/>
+                <TextView
+                    android:id="@+id/tv_choice_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="sdsdsdsdsds"
+                    android:textSize="20sp"
+                    android:textColor="#fff"/>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+
+                android:paddingLeft="10dp"
+                android:id="@+id/ll_b"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_choice_selector"
+                android:layout_weight="1"
+                android:minHeight="60dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B: "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#fff"/>
+                <TextView
+                    android:id="@+id/tv_choice_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sdsdsdsdsds"
+                    android:textSize="20sp"
+                    android:textColor="#fff"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+
+                android:paddingLeft="10dp"
+                android:id="@+id/ll_d"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:minHeight="60dp"
+                android:background="@drawable/btn_choice_selector"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:onClick="onClick">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="D: "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#fff"/>
+                <TextView
+                    android:id="@+id/tv_choice_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="sdsdsdsdsds"
+                    android:textSize="20sp"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"/>
+            </LinearLayout>
+
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

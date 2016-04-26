@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="right"
+    android:layout_gravity="right"
+    android:background="@drawable/item_cash_selector"
+     >
+<!--   android:clickable="false"
+    android:focusable="false"-->
+    <TextView
+        android:id="@+id/tv_cash_number"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:gravity="right"
+        android:text="1"
+        android:textSize="15sp"
+        android:textColor="@color/orange"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_cash_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$1000"
+        android:textSize="15sp"
+        android:textColor="@color/orange"
+        android:layout_gravity="center_vertical|left" />
+
+<!--<TableLayout-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<TableRow android:layout_gravity="right">-->
+            <!--<TextView-->
+                <!--android:id="@+id/tv_cash_number"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical|right"-->
+
+                <!--android:layout_span="1"-->
+                <!--android:text="1"-->
+                <!--android:textSize="15sp"-->
+                <!--android:textColor="@color/orange" />-->
+            <!--<ImageView-->
+                <!--android:id="@+id/img_word"-->
+                <!--android:layout_width="10dp"-->
+                <!--android:layout_height="10dp"-->
+                <!--android:background="@drawable/ic_action_social_group"-->
+                <!--android:scaleType="fitXY" />-->
+
+            <!--<TextView-->
+                <!--android:layout_span="1"-->
+                <!--android:id="@+id/tv_cash_value"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="$1000"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="15sp"-->
+                <!--android:textColor="@color/orange"-->
+                <!--android:layout_gravity="center_vertical|left" />-->
+            <!--</TableRow>-->
+        <!--<TableRow android:layout_gravity="center_vertical">-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical|right"-->
+                <!--android:paddingLeft="3dp"-->
+                <!--android:paddingRight="3dp"-->
+                <!--android:layout_span="1"-->
+                <!--android:text="10"-->
+                <!--android:textSize="15sp"-->
+                <!--android:textColor="@color/orange" />-->
+            <!--<ImageView-->
+                <!--android:layout_width="10dp"-->
+                <!--android:layout_height="10dp"-->
+                <!--android:background="@drawable/ic_action_social_group"-->
+                <!--android:scaleType="fitXY" />-->
+
+            <!--<TextView-->
+                <!--android:layout_span="1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="$11000"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="15sp"-->
+                <!--android:textColor="@color/orange"-->
+                <!--android:layout_gravity="center_vertical|left" />-->
+        <!--</TableRow>-->
+        <!--<TableRow android:layout_gravity="center_vertical">-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical|right"-->
+                <!--android:paddingLeft="3dp"-->
+                <!--android:paddingRight="3dp"-->
+                <!--android:layout_span="1"-->
+                <!--android:text="160"-->
+                <!--android:textSize="15sp"-->
+                <!--android:textColor="@color/orange" />-->
+            <!--<ImageView-->
+                <!--android:layout_width="10dp"-->
+                <!--android:layout_height="10dp"-->
+                <!--android:background="@drawable/ic_action_social_group"-->
+                <!--android:scaleType="fitXY" />-->
+
+            <!--<TextView-->
+                <!--android:layout_span="1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="$100000"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="15sp"-->
+                <!--android:textColor="@color/orange"-->
+                <!--android:layout_gravity="center_vertical|left" />-->
+        <!--</TableRow>-->
+
+    <!--</TableLayout>-->
+
+
+</LinearLayout>

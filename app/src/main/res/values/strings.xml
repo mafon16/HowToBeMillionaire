@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Millionaire</string>
+    <string name="correct">Правильно :)</string>
+    <string name="wrong">Вы проиграли :)</string>
+    <string name="next">Дальше</string>
+    <string name="enter">Начать игру</string>
+    <string name="load_game">Загрузить игру</string>
+    <string name="error_network">Ошибка интернет соединения, проверьте подключение! </string>
+    <string name="game_empty">Нет сохранённой игры!</string>
+    <string name="game_win">Вы выграли $1000000!</string>
+    <string name="exit">Выйти</string>
+    <string name="exit_dialog">Сохранить игру ?</string>
+    <string name="ok">OK</string>
+    <string name="not">Нет</string>
+    <string name="cancel">Выйти</string>
+    <string name="group_help_message">Результаты голосования зала</string>
+    <string name="friend_dialog">Я думаю правильный вариант..</string>
+</resources>
