@@ -227,15 +227,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 checkAnswer(isCorrectD, v);
                 break;
             case R.id.btn_next:
-                ll_a.setClickable(true);
-                ll_b.setClickable(true);
-                ll_c.setClickable(true);
-                ll_d.setClickable(true);
-                ll_a.setBackgroundResource(R.drawable.btn_choice_selector);
-                ll_b.setBackgroundResource(R.drawable.btn_choice_selector);
-                ll_c.setBackgroundResource(R.drawable.btn_choice_selector);
-                ll_d.setBackgroundResource(R.drawable.btn_choice_selector);
-
                 setNextQuestion();
                 break;
         }
@@ -251,8 +242,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         btn_help_fifty_fifty.setClickable(false);
 
         random = new Random();
-
-        Log.d("TAG","wrongChoiceArray.."+wrongChoiceArray.size());
 
         int firstRandWrongNum = random.nextInt(wrongChoiceArray.size());
         String firstRandWrongChoice = wrongChoiceArray.get(firstRandWrongNum).getChoice();
@@ -327,13 +316,22 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setNextQuestion() {
+        ll_a.setClickable(true);
+        ll_b.setClickable(true);
+        ll_c.setClickable(true);
+        ll_d.setClickable(true);
+        ll_a.setBackgroundResource(R.drawable.btn_choice_selector);
+        ll_b.setBackgroundResource(R.drawable.btn_choice_selector);
+        ll_c.setBackgroundResource(R.drawable.btn_choice_selector);
+        ll_d.setBackgroundResource(R.drawable.btn_choice_selector);
+
         numOfQuestion++;
         setQuestion(numOfQuestion);
         highlightCash(cashAdapter.getCount() - numOfQuestion);
     }
 
     private void highlightCash(int pos) {
-        lv_cash.setItemChecked(pos - 1, true);
+        lv_cash.setItemChecked(pos - 1, true);//-1 is correct current position
     }
 
 
@@ -358,22 +356,20 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         Thread t = new Thread(new Runnable() {
             public void run() {
-                sleepHalfsec();
+
+                try {
+                    TimeUnit.MILLISECONDS.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
                 handler.sendEmptyMessage(HANDLE_CHECKED_ANSWER);
-                sleepHalfsec();
 
             }
         });
         t.start();
     }
 
-    void sleepHalfsec() {
-        try {
-            TimeUnit.MILLISECONDS.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     private void setupCashListView() {
@@ -397,9 +393,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         cashAdapter = new CashAdapter(this, cashList);
         lv_cash.setAdapter(cashAdapter);
         lv_cash.setClickable(false);
-        highlightCash(cashAdapter.getCount() - 1);
+        highlightCash(cashAdapter.getCount());
     }
-
 
 
     private void saveGame() {
@@ -409,7 +404,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         mSettingsEditor.putBoolean("group_help_state",isGroupHelpOpen);
         mSettingsEditor.putBoolean("fifty_fifty_help_state",isFiftyFiftyHelpOpen);
         mSettingsEditor.apply();
-
 
         db.clearTables();
         for (Question question : questionArrayList) {
